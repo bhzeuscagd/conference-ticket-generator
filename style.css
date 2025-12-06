@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap");
+
+:root {
+  /* Colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+
+  /* Gradient text */
+  --text-gradient: linear-gradient(
+    to bottom,
+    hsl(7, 86%, 67%),
+    hsl(0, 0%, 100%)
+  );
+
+  /* Typography */
+  --font-family: "Inconsolata", monospace;
+  --font-size-label: 20px;
+
+  /* Layout sizes */
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px; /* rem base */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: var(--neutral-900);
+  background: var(--neutral-0);
+  -webkit-font-smoothing: antialiased;
+  background-image: url(assets/images/pattern-lines.svg),
+    url(assets/images/pattern-squiggly-line-top.svg),
+    url(assets/images/pattern-squiggly-line-bottom-desktop.svg),
+    url(assets/images/pattern-circle.svg),
+    url(assets/images/background-desktop.png);
+  background-position: top center, right top, bottom left, right 165px top 555px,
+    center center;
+  background-repeat: no-repeat;
+  background-size: contain, auto, auto, auto, cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  margin: 0;
+  color: var(--neutral-0);
+}
+
+p,
+label,
+input {
+  font-size: var(--font-size-label);
+  color: var(--neutral-700);
+}
+
+main {
+  flex: 1;
+}
+
+.text-gradient {
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+/*Formulario de entrada*/
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3rem 1rem;
+}
+
+.hero h1 {
+  max-width: 700px;
+  font-size: 2.5rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed var(--neutral-300);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: color-mix(in srgb, var(--neutral-300), transparent 95%);
+  max-width: 100%;
+}
+
+.upload-area .upload {
+  border-radius: 15px;
+  border: 1px solid var(--neutral-500);
+  background-color: color-mix(in srgb, var(--neutral-300), transparent 95%);
+  padding: 0.5rem 0.5rem;
+}
+
+.upload-area .upload-label {
+  width: auto;
+  height: 100px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="file"]:focus + .upload-area,
+.upload-area:hover {
+  background-color: var(--neutral-900);
+  outline: 2px solid var(--neutral-500);
+  outline-offset: 2px;
+  cursor: pointer;
+}
+.form-container .upload-area .action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+.form-container .upload-area .action-buttons button {
+  background-color: color-mix(in srgb, var(--neutral-300), transparent 95%);
+  color: var(--neutral-500);
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-container .upload-area .action-buttons button:hover {
+  text-decoration: underline;
+}
+
+.form-container span {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: var(--neutral-500);
+  font-size: 15px;
+}
+
+.form-container .form-register {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container .form-register .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-container .form-register .form-group label {
+  font-weight: 500;
+  color: var(--neutral-0);
+}
+
+.form-container .form-register .form-group input {
+  padding: 10px;
+  border: 1px solid var(--neutral-700);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: color-mix(in srgb, var(--neutral-700), transparent 95%);
+}
+
+.form-container .form-register .form-group input:focus {
+  border-color: var(--neutral-700);
+  outline: 2px solid var(--neutral-700);
+  outline-offset: 2px;
+}
+
+.form-container .generate-ticket {
+  padding: 15px;
+  background-color: var(--orange-500);
+  color: var(--neutral-900);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-container .generate-ticket:hover {
+  border: 2px solid var(--neutral-700);
+  outline: 2px solid var(--neutral-0);
+  outline-offset: 2px;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 14px;
+  color: var(--neutral-500);
+  margin-bottom: 2rem;
+}
+
+/* Cambios del js  */
+
+.upload-area.is-uploaded #PreviewImg {
+  max-width: 52px;
+}
+
+.upload-area.is-uploaded .upload {
+  padding: 0;
+  overflow: hidden;
+}
+
+.upload-area.is-uploaded #text-info,
+.upload-area.is-uploaded .upload-label {
+  display: none;
+}
+.upload-area.is-uploaded .action-buttons {
+  display: block !important;
+}
