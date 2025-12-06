@@ -34,14 +34,14 @@
     </header>
     <main>
       <!-- Form starts -->
-      <section class="hero">
+      <section class="hero" style="display: none">
         <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
 
         <p>Secure your spot at next year's biggest coding conference.</p>
       </section>
 
       <section class="form">
-        <div class="form-container">
+        <div class="form-container" style="display: none">
           <h2>Upload Avatar</h2>
           <div class="upload-area">
             <label
@@ -117,15 +117,18 @@
 
       <!-- Generated tickets starts -->
 
-      <section class="generated-tickets hidden">
+      <section class="generated-tickets">
         <h2>
           Congrats, <span id="yourname" class="text-gradient"> juampi</span>!
           Your ticket is ready.
         </h2>
-        <p>
-          We've emailed your ticket to <span id="Email">@tupapi</span> and will
-          send updates in the run up to the event.
-        </p>
+        <div class="container-p">
+          <p>We've emailed your ticket to</p>
+          <p>
+            <span id="Email">bhzeuscagd@gmail.com</span> and will end updates in
+          </p>
+          <p>the run up to the event.</p>
+        </div>
         <div class="card-ticket">
           <img
             src="assets/images/pattern-ticket.svg"
@@ -134,7 +137,7 @@
           />
           <div class="ticket-content">
             <header class="ticket-header">
-              <h3>
+              <h3 class="title-ticket">
                 <img
                   src="assets/images/logo-mark.svg"
                   alt="Coding Conf logo"
@@ -144,22 +147,17 @@
               <p class="ticket-info">Jan 31, 2025 / Austin, TX</p>
             </header>
             <footer class="ticket-footer">
-              <div class="img-userticket">
-                <img
-                  src="assets/images/image-avatar.jpg"
-                  alt="user avatar"
-                  class="user-avatar-ticket"
-                />
-                <div class="info-userticket">
-                  <p class="name-userticket" id="name-userticket">juampi</p>
-                  <p class="github-userticket" id="github-userticket">
-                    <img
-                      src="assets/images/icon-github.svg"
-                      alt="github icon"
-                    />
-                    @tupapi
-                  </p>
-                </div>
+              <img
+                src="assets/images/image-avatar.jpg"
+                alt="user avatar"
+                class="user-avatar-ticket"
+              />
+              <div class="info-userticket">
+                <p class="name-userticket" id="name-userticket">juampi</p>
+                <p class="github-userticket" id="github-userticket">
+                  <img src="assets/images/icon-github.svg" alt="github icon" />
+                  @tupapi
+                </p>
               </div>
             </footer>
             <aside class="numer-ticket">
