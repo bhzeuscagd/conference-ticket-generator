@@ -41,7 +41,7 @@
       </section>
 
       <section class="form">
-        <div class="form-container" style="display: none">
+        <div class="form-container">
           <h2>Upload Avatar</h2>
           <div class="upload-area">
             <label
@@ -72,8 +72,16 @@
             ><img src="assets/images/icon-info.svg" alt="icon info" /> Upload
             your photo (JPG or PNG, max size: 500KB).</span
           >
+          <span class="error-msg" id="peso-info-error" style="display: none"
+            ><img src="assets/images/icon-info.svg" alt="warning" /> File too
+            large. Please upload a photo under 500KB
+          </span>
 
-          <form action="#" class="form-register" method="post">
+          <span class="error-msg" id="upload-info-error" style="display: none"
+            ><img src="assets/images/icon-info.svg" alt="warning" />Please
+            upload a photo under 500KB
+          </span>
+          <form action="#" class="form-register" method="post" id="ticket-form">
             <div class="form-group">
               <label for="full-name">Full Name</label>
               <input
@@ -88,13 +96,16 @@
             <div class="form-group">
               <label for="email-address">Email Address</label>
               <input
-                type="email"
+                type="text"
                 id="email-address"
                 name="email-address"
                 placeholder="example@email.com"
-                required
               />
             </div>
+            <span class="error-msg" id="email-info-error" style="display: none"
+              ><img src="assets/images/icon-info.svg" alt="warning" /> Please
+              enter a valid email address.
+            </span>
 
             <div class="form-group">
               <label for="github-username">GitHub Username</label>
@@ -117,15 +128,17 @@
 
       <!-- Generated tickets starts -->
 
-      <section class="generated-tickets">
+      <section class="generated-tickets" style="display: none">
         <h2>
-          Congrats, <span id="yourname" class="text-gradient"> juampi</span>!
+          Congrats,
+          <span id="yourname" class="text-gradient"> Jonatan Kristof</span>!
           Your ticket is ready.
         </h2>
         <div class="container-p">
           <p>We've emailed your ticket to</p>
           <p>
-            <span id="Email">bhzeuscagd@gmail.com</span> and will end updates in
+            <span id="Email" class="orange">bhzeuscagd@gmail.com</span>
+            and will end updates in
           </p>
           <p>the run up to the event.</p>
         </div>
@@ -148,20 +161,22 @@
             </header>
             <footer class="ticket-footer">
               <img
+                id="ticket-photo"
                 src="assets/images/image-avatar.jpg"
                 alt="user avatar"
                 class="user-avatar-ticket"
               />
               <div class="info-userticket">
-                <p class="name-userticket" id="name-userticket">juampi</p>
+                <p class="name-userticket" id="name-userticket">
+                  Jonatan Kristof
+                </p>
                 <p class="github-userticket" id="github-userticket">
                   <img src="assets/images/icon-github.svg" alt="github icon" />
-                  @tupapi
+                  @jonatankristof0101
                 </p>
               </div>
             </footer>
             <aside class="numer-ticket">
-              <p class="number-label">Ticket No.</p>
               <p class="number-value" id="number-ticket">#001234</p>
             </aside>
           </div>

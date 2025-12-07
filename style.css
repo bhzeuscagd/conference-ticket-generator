@@ -12,11 +12,7 @@
   --orange-700: hsl(7, 71%, 60%);
 
   /* Gradient text */
-  --text-gradient: linear-gradient(
-    to bottom,
-    hsl(7, 86%, 67%),
-    hsl(0, 0%, 100%)
-  );
+  --text-gradient: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
 
   /* Typography */
   --font-family: "Inconsolata", monospace;
@@ -109,6 +105,9 @@ main {
   display: none;
 }
 
+.orange {
+  color: var(--orange-500);
+}
 /*Formulario de entrada*/
 
 .header-logo {
@@ -310,8 +309,8 @@ input[type="file"]:focus + .upload-area,
 
 .generated-tickets .container-p p {
   margin: 3px 0px;
-  color: var(--neutral-700);
-  font-size: 0.75rem;
+  color: var(--neutral-300);
+  font-size: 0.8rem;
 }
 
 /** Card ticket */
@@ -329,6 +328,7 @@ input[type="file"]:focus + .upload-area,
   align-items: flex-start;
   z-index: 1;
   min-width: 600px;
+  position: relative;
 }
 
 .ticket-content .ticket-header {
@@ -344,7 +344,8 @@ input[type="file"]:focus + .upload-area,
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .ticket-content .ticket-header p {
@@ -383,4 +384,37 @@ input[type="file"]:focus + .upload-area,
 .ticket-content .ticket-footer .info-userticket p {
   margin-top: 0px;
   margin-bottom: 0px;
+  color: var(--neutral-0);
+}
+
+.ticket-content .ticket-footer .info-userticket .name-userticket {
+  font-size: 1.5rem;
+}
+
+.ticket-content .numer-ticket {
+  position: absolute;
+  writing-mode: vertical-rl;
+  right: 40px;
+  top: 4.5rem;
+}
+
+.ticket-content .numer-ticket p {
+  margin: 0px;
+  color: var(--neutral-500);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/** Mensaje de error tamaño de archivo */
+
+.form-container .error-msg {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.form-container .error-msg img {
+  filter: invert(27%) sepia(91%) saturate(7493%) hue-rotate(357deg)
+    brightness(101%) contrast(101%);
 }
