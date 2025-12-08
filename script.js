@@ -8,6 +8,7 @@ const photoUploadError = document.getElementById("upload-info-error");
 const email = document.getElementById("email-address");
 const textInfo = document.getElementById("text-info");
 const actionButtons = document.getElementById("action");
+const heroSection = document.getElementById("hero");
 let currentFile = null;
 
 // ---------------------------
@@ -154,4 +155,5 @@ document.getElementById("ticket-form").addEventListener("submit", function (e) {
   // Mostrar ticket
   document.querySelector(".generated-tickets").style.display = "flex";
   document.querySelector(".form").style.display = "none";
+  document.querySelector(".hero").style.display = "none";
 });

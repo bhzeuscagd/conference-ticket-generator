@@ -121,12 +121,16 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 3rem 1rem;
+  margin: 1rem 1rem;
 }
 
 .hero h1 {
   max-width: 700px;
   font-size: 2.5rem;
+}
+
+.hero p {
+  color: var(--neutral-300);
 }
 
 .form {
@@ -158,6 +162,7 @@ main {
   padding: 20px;
   background-color: color-mix(in srgb, var(--neutral-300), transparent 95%);
   max-width: 100%;
+  position: relative;
 }
 
 .upload-area .upload {
@@ -168,11 +173,12 @@ main {
 }
 
 .upload-area .upload-label {
-  width: auto;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  inset: 0;
 }
 
 input[type="file"]:focus + .upload-area,
@@ -292,6 +298,7 @@ input[type="file"]:focus + .upload-area,
   flex-direction: column;
   align-items: center;
   margin: 2rem 1rem;
+  position: relative;
 }
 
 .generated-tickets h2 {
@@ -327,6 +334,8 @@ input[type="file"]:focus + .upload-area,
   flex-direction: column;
   align-items: flex-start;
   z-index: 1;
+  width: 100%;
+  max-width: 600px;
   min-width: 600px;
   position: relative;
 }
@@ -379,6 +388,7 @@ input[type="file"]:focus + .upload-area,
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
 }
 
 .ticket-content .ticket-footer .info-userticket p {
@@ -417,4 +427,138 @@ input[type="file"]:focus + .upload-area,
 .form-container .error-msg img {
   filter: invert(27%) sepia(91%) saturate(7493%) hue-rotate(357deg)
     brightness(101%) contrast(101%);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url(assets/images/pattern-lines.svg),
+      url(assets/images/pattern-squiggly-line-top.svg),
+      url(assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+      url(assets/images/background-mobile.png);
+
+    background-position: top center, right 0px top 20px, bottom left,
+      center center;
+    background-repeat: no-repeat;
+    background-size: cover, auto 40px, auto 150px, cover;
+  }
+
+  /* Parte del Formulario */
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .form {
+    width: 100%;
+    padding: 0 0.2rem;
+    margin-top: -0.8rem;
+  }
+
+  .form h2 {
+    font-size: 1.2rem;
+    margin-bottom: -10px;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .upload-area p {
+    font-size: 0.9rem;
+  }
+
+  .form-container .form-register .form-group label {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-container span {
+    font-size: 0.55rem;
+  }
+  .form-container span img {
+    width: 12px;
+  }
+
+  .error-msg {
+    font-size: 0.55px;
+  }
+
+  /* Parte del Ticket Generado */
+
+  .generated-tickets {
+    overflow: hidden;
+  }
+  .generated-tickets h2 {
+    font-size: 1.5rem;
+  }
+
+  .generated-tickets .container-p p {
+    font-size: 0.75rem;
+  }
+
+  .ticket-content {
+    min-width: 340px;
+    max-width: 100%;
+  }
+
+  .ticket-content .ticket-header {
+    padding: 10px 0px 15px 15px;
+    gap: 5px;
+  }
+
+  .ticket-content .ticket-header .title-ticket img {
+    width: 30px;
+  }
+
+  .ticket-content .ticket-header .title-ticket {
+    font-size: 1.2rem;
+  }
+
+  .ticket-content .ticket-header p {
+    font-size: 0.7rem;
+    margin: -8px 0px 0px 40px;
+  }
+
+  .ticket-content .ticket-footer {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .ticket-content .ticket-footer .info-userticket .name-userticket {
+    font-size: 0.8rem;
+  }
+
+  .ticket-content .ticket-footer .info-userticket p {
+    font-size: 0.7rem;
+    gap: 5px;
+  }
+
+  .ticket-content .ticket-footer .info-userticket .github-userticket img {
+    width: 15px;
+  }
+
+  .ticket-content .ticket-footer .user-avatar-ticket {
+    width: 45px;
+  }
+  .ticket-content .numer-ticket {
+    right: 20px;
+    top: 2.5rem;
+  }
+
+  .card-ticket .pattern-ticket {
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  .ticket-content .numer-ticket p {
+    font-size: 1rem;
+  }
+
+  .card-ticket {
+    margin-bottom: 150px;
+  }
 }
